@@ -1,3 +1,5 @@
+#!/bin/bash
+
 fontname=$1;
 currentdir=$(pwd);
 fontzipfolder="$currentdir/$fontname";
@@ -8,7 +10,7 @@ fontdirectory=.fonts
 echo "Searching for $fontzipfolder...";
 
 # Checking if fontname includes '.zip' or not
-if [ $fontname = *"."* ];
+if [[ "$fontname" =~ \.zip$ ]];
 then
     found=$(find $currentdir -iname $fontname);
 else
